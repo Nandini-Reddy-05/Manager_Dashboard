@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Manager Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>📊 Project Manager Dashboard</h1>
+
+<section class="task-form">
+    <input type="text" id="taskInput" placeholder="Task title">
+    
+    <select id="statusSelect">
+        <option value="todo">To Do</option>
+        <option value="progress">In Progress</option>
+        <option value="completed">Completed</option>
+    </select>
+
+    <select id="prioritySelect">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+
+    <input type="date" id="dueDate">
+
+    <button id="addTask">Add Task</button>
+</section>
+
+<section class="stats">
+    <div class="card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+    </div>
+    <div class="card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+    </div>
+    <div class="card">
+        <h3>Overdue</h3>
+        <p id="overdueTasks">0</p>
+    </div>
+    <div class="card">
+        <h3>Completion %</h3>
+        <p id="completionRate">0%</p>
+    </div>
+</section>
+
+<section class="charts">
+    <canvas id="statusChart"></canvas>
+    <canvas id="priorityChart"></canvas>
+</section>
+
+<section>
+    <h2>Task List</h2>
+    <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('todo')">To Do</button>
+        <button onclick="filterTasks('progress')">In Progress</button>
+        <button onclick="filterTasks('completed')">Completed</button>
+    </div>
+    <div id="taskList"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
